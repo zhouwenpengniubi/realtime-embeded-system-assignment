@@ -10,9 +10,9 @@
 #include<math.h>
 
 // Angle to pulsewidth (us) for servo
-#define SERVO_PULSE_MIN     1000     // 0°
+#define SERVO_PULSE_MIN     850     // 0°
 #define SERVO_PULSE_CENTER  1500    // 90°
-#define SERVO_PULSE_MAX     2000    // 180°
+#define SERVO_PULSE_MAX     2150    // 180°
 
 /**
  * PWM class for the Raspberry PI 5
