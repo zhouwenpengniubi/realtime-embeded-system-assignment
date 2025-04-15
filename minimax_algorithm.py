@@ -2,7 +2,7 @@
 # https://github.com/colingogogo/gobang_AI
 
 class MinimaxAlgorithm:
-    def __init__(self, board_size=(15, 15), search_depth=3, attack_ratio=1):
+    def __init__(self, board_size=(12, 12), search_depth=3, attack_ratio=1):
         """
         Initialize the Minimax algorithm
         :param board_size: Board size, default 15x15
