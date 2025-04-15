@@ -37,12 +37,12 @@ vector<Point2f> order_points(vector<Point> pts) {
 // Determine the color of the piece based on average brightness
 string detect_piece_color(Mat& gray, int x, int y, int r) {
     Mat mask = Mat::zeros(gray.size(), CV_8UC1);
-    circle(mask, Point(x, y), r - 2, Scalar(255), -1);
+    circle(mask, Point(x, y), int(r * 0.7), Scalar(255), -1);
     Scalar meanVal = mean(gray, mask);
     double val = meanVal[0];
     if (val < 70) return "black";
     else if (val > 180) return "white";
-    else return "unknown";
+    else return "white";
 }
 
 // Check for five in a row
@@ -116,7 +116,7 @@ int main() {
 
                 Mat gray_warped;
                 cvtColor(warped, gray_warped, COLOR_BGR2GRAY);
-                GaussianBlur(gray_warped, gray_warped, Size(9, 9), 0);
+                GaussianBlur(gray_warped, gray_warped, Size(7, 7), 0);
 
                 vector<Point> grid_points;
                 for (int i = 0; i < grid_lines; i++) {
@@ -130,7 +130,7 @@ int main() {
 
                 vector<Vec3f> circles;
                 HoughCircles(gray_warped, circles, HOUGH_GRADIENT, 1.2, spacing * 0.8,
-                             100, 15, 18, 20);
+                             100, 18, 18, 24);
 
                 for (size_t i = 0; i < circles.size(); i++) {
                     int x = cvRound(circles[i][0]);
