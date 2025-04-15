@@ -13,14 +13,9 @@ gomoku_robot
 *.a
 *.so
 
-test_pwm
-*.out
-*.elf
-*.a
-*.so
-
 # Editor settings
 .vscode/
 .idea/
 *.log
 *.swp
+test_servo

@@ -18,7 +18,7 @@ if(BUILD_TESTS)
     # find_package(OpenCV REQUIRED)
     # target_link_libraries(test_cam ${OpenCV_LIBS})
 
-    add_executable(test_pwm
-    tests/test_pwm.cpp
+    add_executable(test_servo
+    tests/test_servo.cpp
 )
 endif()
